@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroGuide - Smart Farming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌱 AgroGuide</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#recommend">Crop Guide</a>
+        <a href="#market">Market</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <button class="login-btn" onclick="showLogin()">Farmer Login</button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">SMART FARMING PLATFORM</span>
+
+        <h1>Grow Smarter.<br>
+            <span>Harvest Better.</span>
+        </h1>
+
+        <p>
+            AgroGuide helps farmers make better crop decisions using
+            soil, weather and market information.
+        </p>
+
+        <div class="hero-buttons">
+            <button onclick="scrollToSection('recommend')">
+                🌾 Get Crop Recommendation
+            </button>
+
+            <button class="secondary" onclick="scrollToSection('market')">
+                📊 View Market Prices
+            </button>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <div class="plant-icon">🌱</div>
+        <h3>Smart Farming</h3>
+        <p>Better decisions for better harvests.</p>
+
+        <div class="mini-stats">
+            <div>
+                <strong>24°C</strong>
+                <small>Temperature</small>
+            </div>
+
+            <div>
+                <strong>68%</strong>
+                <small>Humidity</small>
+            </div>
+
+            <div>
+                <strong>Good</strong>
+                <small>Soil Status</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+
+    <div class="section-title">
+        <span>FARM DASHBOARD</span>
+        <h2>Your Farm at a Glance</h2>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">🌾</div>
+            <div>
+                <h3>Rice</h3>
+                <p>Current Crop</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🌧️</div>
+            <div>
+                <h3>Moderate</h3>
+                <p>Rainfall</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">💧</div>
+            <div>
+                <h3>Good</h3>
+                <p>Water Availability</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div>
+                <h3>42 Days</h3>
+                <p>Expected Harvest</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CROP RECOMMENDATION -->
+<section class="recommend-section" id="recommend">
+
+    <div class="section-title">
+        <span>SMART RECOMMENDATION</span>
+        <h2>Find the Right Crop</h2>
+        <p>Enter your farm conditions to get a crop recommendation.</p>
+    </div>
+
+    <div class="recommend-container">
+
+        <form id="cropForm">
+
+            <div class="form-group">
+                <label>Soil Type</label>
+
+                <select id="soil">
+                    <option value="">Select Soil Type</option>
+                    <option value="clay">Clay Soil</option>
+                    <option value="loamy">Loamy Soil</option>
+                    <option value="sandy">Sandy Soil</option>
+                    <option value="black">Black Soil</option>
+                    <option value="red">Red Soil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Water Availability</label>
+
+                <select id="water">
+                    <option value="">Select Availability</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Season</label>
+
+                <select id="season">
+                    <option value="">Select Season</option>
+                    <option value="monsoon">Monsoon</option>
+                    <option value="winter">Winter</option>
+                    <option value="summer">Summer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Land Area (Acres)</label>
+
+                <input
+                    type="number"
+                    id="land"
+                    placeholder="Example: 2"
+                    min="0.1"
+                >
+            </div>
+
+            <button type="submit" class="recommend-btn">
+                🔍 Recommend Crop
+            </button>
+
+        </form>
+
+        <div class="recommend-result" id="result">
+
+            <div class="result-placeholder">
+                <div>🌱</div>
+
+                <h3>Your Recommendation</h3>
+
+                <p>
+                    Enter your farm details to receive
+                    a suitable crop recommendation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CROP INFORMATION -->
+<section class="crops-section">
+
+    <div class="section-title">
+        <span>CROP INFORMATION</span>
+        <h2>Popular Crops</h2>
+    </div>
+
+    <div class="crop-grid">
+
+        <div class="crop-card">
+            <div class="crop-image">🌾</div>
+            <h3>Rice</h3>
+            <p>Suitable for clay and loamy soil.</p>
+
+            <div class="crop-info">
+                <span>💧 High Water</span>
+                <span>☀️ Warm</span>
+            </div>
+        </div>
+
+        <div class="crop-card">
+            <div class="crop-image">🌽</div>
+            <h3>Maize</h3>
+            <p>Grows well in fertile loamy soil.</p>
+
+            <div class="crop-info">
+                <span>💧 Medium Water</span>
+                <span>☀️ Warm</span>
+            </div>
+        </div>
+
+        <div class="crop-card">
+            <div class="crop-image">🥜</div>
+            <h3>Groundnut</h3>
+            <p>Suitable for sandy and red soil.</p>
+
+            <div class="crop-info">
+                <span>💧 Low Water</span>
+                <span>☀️ Warm</span>
+            </div>
+        </div>
+
+        <div class="crop-card">
+            <div class="crop-image">🍅</div>
+            <h3>Tomato</h3>
+            <p>Requires well-drained fertile soil.</p>
+
+            <div class="crop-info">
+                <span>💧 Medium Water</span>
+                <span>☀️ Moderate</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MARKET -->
+<section class="market-section" id="market">
+
+    <div class="section-title">
+        <span>MARKET INSIGHTS</span>
+        <h2>Today's Crop Prices</h2>
+        <p>Sample market data for demonstration.</p>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Crop</th>
+                    <th>Market</th>
+                    <th>Price / Kg</th>
+                    <th>Trend</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>🌾 Rice</td>
+                    <td>Madurai</td>
+                    <td>₹42</td>
+                    <td class="up">↗ +4.2%</td>
+                </tr>
+
+                <tr>
+                    <td>🌽 Maize</td>
+                    <td>Nagercoil</td>
+                    <td>₹28</td>
+                    <td class="up">↗ +2.8%</td>
+                </tr>
+
+                <tr>
+                    <td>🥜 Groundnut</td>
+                    <td>Tirunelveli</td>
+                    <td>₹72</td>
+                    <td class="down">↘ -1.4%</td>
+                </tr>
+
+                <tr>
+                    <td>🍅 Tomato</td>
+                    <td>Chennai</td>
+                    <td>₹35</td>
+                    <td class="up">↗ +6.1%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+<!-- WEATHER -->
+<section class="weather-section">
+
+    <div class="weather-card">
+
+        <div>
+            <span>WEATHER OVERVIEW</span>
+            <h2>Today's Farm Weather</h2>
+            <p>Suitable conditions for farming activities.</p>
+        </div>
+
+        <div class="weather-data">
+
+            <div>
+                <strong>☀️ 29°C</strong>
+                <small>Temperature</small>
+            </div>
+
+            <div>
+                <strong>💧 68%</strong>
+                <small>Humidity</small>
+            </div>
+
+            <div>
+                <strong>🌧️ 20%</strong>
+                <small>Rain Chance</small>
+            </div>
+
+            <div>
+                <strong>💨 12 km/h</strong>
+                <small>Wind Speed</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+
+    <div class="about-content">
+
+        <span>ABOUT AGROGUIDE</span>
+
+        <h2>Technology for Better Farming</h2>
+
+        <p>
+            AgroGuide is a smart farming decision-support platform
+            designed to help farmers make informed decisions about
+            crop selection, farm management, weather conditions and
+            market opportunities.
+        </p>
+
+    </div>
+
+    <div class="about-points">
+
+        <div>
+            <span>01</span>
+            <h3>Better Decisions</h3>
+            <p>Use farm information to select suitable crops.</p>
+        </div>
+
+        <div>
+            <span>02</span>
+            <h3>Market Awareness</h3>
+            <p>Understand crop prices and market trends.</p>
+        </div>
+
+        <div>
+            <span>03</span>
+            <h3>Smart Agriculture</h3>
+            <p>Combine technology and agriculture for better outcomes.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="logo">🌱 AgroGuide</div>
+    <p>Smart Farming Decision Support System</p>
+    <p>© 2026 AgroGuide. Final Year Project.</p>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeLogin()">×</button>
+
+        <h2>Farmer Login</h2>
+
+        <p>Access your AgroGuide dashboard.</p>
+
+        <input type="text" placeholder="Farmer Name">
+
+        <input type="email" placeholder="Email Address">
+
+        <button onclick="loginUser()">Login</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
